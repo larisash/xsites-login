@@ -1,0 +1,197 @@
+<!-- Default form register -->
+<section class="form-elegant">
+  <div class="card">
+    <div class="card-body mx-4">
+      <form [formGroup]="registerForm" (ngSubmit)="onRegestore()">
+        <div class="text-center">
+          <h3 class="dark-grey-text mb-5"><strong>Sign up</strong></h3>
+        </div>
+
+        <div class="form-row mb-4">
+          <div class="col">
+            <!-- First name -->
+            <input
+              type="text"
+              formControlName="firstName"
+              id="defaultRegisterFormFirstName"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+              placeholder="First name"
+            />
+            <div
+              *ngIf="submitted && f.firstName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstName.errors.required">
+                First Name is required
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <!-- Last name -->
+            <input
+              type="text"
+              formControlName="lastName"
+              id="RegisterFormLastName"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+              placeholder="Last name"
+            />
+            <div
+              *ngIf="submitted && f.firstName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstName.errors.required">
+                Last name is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E-mail -->
+        <div class="form-row mb-4">
+          <div class="col">
+            <input
+              type="email"
+              formControlName="email"
+              id="registerFormEmail"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+              placeholder="email"
+            />
+            <div
+              *ngIf="submitted && f.firstName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstName.errors.required">
+                Email is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-row mb-4">
+          <div class="col">
+            <input
+              type="password"
+              formControlName="password"
+              id="registerFormpassword"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              placeholder="password"
+            />
+            <div
+              *ngIf="submitted && f.password.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone number -->
+        <div class="form-row mb-4">
+          <div class="col">
+            <input
+              type="text"
+              formControlName="telephonePrefix"
+              id="registerTelephonePrefix"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid': submitted && f.telephonePrefix.errors
+              }"
+              placeholder="telephonePrefix"
+            />
+            <div
+              *ngIf="submitted && f.telephonePrefix.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.telephonePrefix.errors.required">
+                telephone prefix is required
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              formControlName="telephone"
+              id="registerTelephone"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }"
+              placeholder="telephone"
+            />
+            <div
+              *ngIf="submitted && f.telephone.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.telephone.errors.required">
+                Telephone is required
+              </div>
+            </div>
+          </div>
+          <!--tel-prefix-->
+        </div>
+        <!--countrey-->
+        <div class="form-row mb-4">
+          <div class="col">
+            <input
+              type="text"
+              formControlName="countryIso"
+              id="registerPhoneNumber"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.countryIso.errors }"
+              placeholder="countryIso"
+            />
+            <div
+              *ngIf="submitted && f.countryIso.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.countryIso.errors.required">
+                First Name is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          A member?
+          <span class="link-color" (click)="changeToLogin()">Go to Login</span>
+        </p>
+        <!-- Sign up button -->
+        <button [disabled]="loading" class="btn secondery-color my-4 btn-block">
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm mr-1"
+          ></span>
+          Sign up
+        </button>
+
+        <!-- Social register -->
+
+        <a href="#" class="mx-2" role="button"
+          ><i class="fab fa-facebook-f light-blue-text"></i
+        ></a>
+        <a href="#" class="mx-2" role="button"
+          ><i class="fab fa-twitter light-blue-text"></i
+        ></a>
+        <a href="#" class="mx-2" role="button"
+          ><i class="fab fa-linkedin-in light-blue-text"></i
+        ></a>
+        <a href="#" class="mx-2" role="button"
+          ><i class="fab fa-github light-blue-text"></i
+        ></a>
+
+        <hr />
+
+        <!-- Terms of service -->
+        <p class="font-small grey-text d-flex justify-content-end">
+          By clicking <em>Sign up</em> you agree to our
+          <span (click)="changeToTermsOfService()" class="link-color">
+            terms of service</span
+          >
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

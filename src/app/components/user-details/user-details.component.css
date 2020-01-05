@@ -1,0 +1,5 @@
+.title-container {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+}

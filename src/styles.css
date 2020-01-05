@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  letter-spacing: 0.7px;
+}
+.main-container {
+  /* background: rgb(248, 231, 211); */
+  width: 100%;
+  /* background-image: url("./assets/Background.jpg"); */
+}
+.link-color {
+  color: #007bff;
+  cursor: pointer;
+  padding: 0 5px;
+}
+#particles-js {
+  height: 180vh;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+  background: rgb(28, 9, 65);
+  /* background-image: url(unknown); */
+}
+.secondery-color {
+  background: #443379;
+  color: white;
+}
+.btn:hover {
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,23 @@
+<div class="main-container">
+  <nav class="navbar navbar-expand-lg p-4 mb-5 secondery-color text-white">
+    <h1 class="main-title">Xsites</h1>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- <ul class="navbar-nav mr-auto">
+        <li class="nav-item"> -->
+      <h5 class="hello-title">Hello,</h5>
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
+
+      <!-- </li> -->
+      <!-- <li class="nav-item active"> -->
+      <h5 class="user-name">{{ getUser() }}</h5>
+      <!-- </li> -->
+      <!-- </ul> -->
+      <img src="https://img.icons8.com/bubbles/50/000000/user-male.png" />
+      <button type="button" (click)="logout()" class="btn btn-light">
+        <p class="logout-btn">Logout</p>
+      </button>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

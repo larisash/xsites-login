@@ -1,0 +1,184 @@
+<!-- Default form register -->
+<section class="form-elegant">
+  <div class="card">
+    <alerts></alerts>
+    <div class="card-body mx-4">
+      <form [formGroup]="userForm" (ngSubmit)="onUpdate()">
+        <div class="text-center">
+          <h3 class="dark-grey-text mb-5"><strong>User Detailes</strong></h3>
+        </div>
+
+        <div class="form-row mb-4">
+          <div class="col title-container">
+            <!-- First name -->
+            <label
+              for="defaultFormCardNameEx"
+              class="grey-text font-weight-light"
+              >First Name</label
+            >
+            <input
+              type="text"
+              formControlName="firstName"
+              id="defaultRegisterFormFirstName"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+              placeholder="First name"
+            />
+            <div
+              *ngIf="submitted && f.firstName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstName.errors.required">
+                First Name is required
+              </div>
+            </div>
+          </div>
+          <div class="col title-container">
+            <!-- Last name -->
+            <label
+              for="defaultFormCardNameEx"
+              class="grey-text font-weight-light"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              formControlName="lastName"
+              id="RegisterFormLastName"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+              placeholder="Last name"
+            />
+            <div
+              *ngIf="submitted && f.lastName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.lastName.errors.required">
+                Last Name is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <!-- E-mail -->
+          <label for="defaultFormCardNameEx" class="grey-text font-weight-light"
+            >Email</label
+          >
+          <input
+            type="email"
+            formControlName="email"
+            id="registerFormEmail"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            placeholder="email"
+            disabled
+          />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">
+              Email is required
+            </div>
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <!-- Password -->
+          <label for="defaultFormCardNameEx" class="grey-text font-weight-light"
+            >Password</label
+          >
+          <input
+            type="password"
+            formControlName="password"
+            id="registerFormpassword"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            placeholder="password"
+          />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <div class="col title-container">
+            <!--tel-prefix-->
+            <label
+              for="defaultFormCardNameEx"
+              class="grey-text font-weight-light"
+              >Tel Prefix</label
+            >
+            <input
+              type="text"
+              formControlName="telephonePrefix"
+              id="registerTelephonePrefix"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid': submitted && f.telephonePrefix.errors
+              }"
+              placeholder="telephonePrefix"
+            />
+            <div
+              *ngIf="submitted && f.telephonePrefix.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.telephonePrefix.errors.required">
+                Telephone Prefix is required
+              </div>
+            </div>
+          </div>
+          <div class="col title-container">
+            <!-- Phone number -->
+            <label
+              for="defaultFormCardNameEx"
+              class="grey-text font-weight-light"
+              >Phone Number</label
+            >
+            <input
+              type="text"
+              formControlName="telephone"
+              id="registerTelephone"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }"
+              placeholder="telephone"
+            />
+            <div
+              *ngIf="submitted && f.telephone.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.telephone.errors.required">
+                Phone Number is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <!--countrey-->
+          <label for="defaultFormCardNameEx" class="grey-text font-weight-light"
+            >Countrey Iso</label
+          >
+          <input
+            type="text"
+            formControlName="countryIso"
+            id="registerPhoneNumber"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.countryIso.errors }"
+            placeholder="countryIso"
+          />
+          <div
+            *ngIf="submitted && f.countryIso.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.countryIso.errors.required">
+              Countrey Iso is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Sign up button -->
+        <button [disabled]="loading" class="btn secondery-color my-4 btn-block">
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm mr-1"
+          ></span>
+          Update Detailes
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+.nav-style {
+  height: 25vh;
+  background: rgb(4, 115, 143);
+}
+.main-title {
+  margin-right: 1rem;
+}
+.logout-btn {
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1.5;
+  letter-spacing: 0.8px;
+}
+li {
+  display: flex;
+  align-items: center;
+}
+.hello-title {
+  margin: 0 12px 0 0;
+  margin-left: auto;
+}
+.user-name {
+  margin: 0 12px 0 0;
+}
+img {
+  margin: 0 12px 0 0;
+}

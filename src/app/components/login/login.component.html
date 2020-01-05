@@ -1,0 +1,80 @@
+<section class="form-elegant">
+  <div class="card">
+    <div class="card-body mx-4">
+      <div class="text-center">
+        <h3 class="dark-grey-text mb-5"><strong>Login</strong></h3>
+      </div>
+
+      <!--Form-->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input
+          type="email"
+          id="defaultLoginFormEmail"
+          class="form-control mb-4"
+          placeholder="E-mail"
+          formControlName="email"
+          [ngClass]="{
+            'is-invalid': submitted && email.invalid
+          }"
+        />
+        <div *ngIf="submitted" class="invalid-feedback">
+          <div *ngIf="submitted && email.invalid">
+            Email is required
+          </div>
+        </div>
+
+        <div class="md-form pb-3">
+          <input
+            type="password"
+            id="defaultLoginFormPassword"
+            placeholder="Password"
+            formControlName="password"
+            class="form-control mb-4"
+            [ngClass]="{
+              'is-invalid': submitted && password.invalid
+            }"
+          />
+          <div *ngIf="submitted" class="invalid-feedback">
+            <div *ngIf="submitted && password.invalid">
+              Password is required
+            </div>
+          </div>
+          <div>
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="defaultLoginFormRemember"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mb-3">
+          <button
+            [disabled]="loading"
+            class="btn secondery-color btn-block my-4"
+            type="submit"
+          >
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span>
+            Login in
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!--Footer-->
+    <div class="modal-footer mx-5 pt-3 mb-1">
+      <p class="font-small grey-text d-flex justify-content-end">
+        Not a member?
+        <span (click)="changeToRegestration($event)" class="link-color">
+          Sign Up</span
+        >
+      </p>
+    </div>
+  </div>
+  <!--/Form without header-->
+</section>
